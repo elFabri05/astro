@@ -2,10 +2,13 @@ import Head from "next/head";
 import Image from "next/image";
 import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.css";
+import Stack from '@mui/material/Stack';
+import Button from '@mui/material/Button';
 
 const inter = Inter({ subsets: ["latin"] });
 
-export default function Home() {
+const Home: React.FC = () => {
+
   return (
     <>
       <Head>
@@ -14,101 +17,72 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={`${styles.main} ${inter.className}`}>
-        <div className={styles.description}>
-          <p>
-            Get started by editing&nbsp;
-            <code className={styles.code}>src/pages/index.tsx</code>
-          </p>
-          <div>
-            <a
-              href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              By{" "}
-              <Image
-                src="/vercel.svg"
-                alt="Vercel Logo"
-                className={styles.vercelLogo}
-                width={100}
-                height={24}
-                priority
-              />
-            </a>
+      <main className={styles.homeContainer}>
+          <div className={styles.imgHomePContainer}>
+            <Image 
+              src="/assets/home-background-img.jpg"
+              alt="The cosmos"
+              width={320}
+              height={320}
+              className={styles.homeImg}
+            />
+            <p className={styles.homeP}>Astrology is presented as a valuable tool for self-knowledge, it&#39;s symbolic system 
+            offers a cosmic perspective that allows us to break down each part of our being in order to 
+            find our center. By delving into the interpretation of our evolutionary processes, we can 
+            explore hidden aspects of our personality, as well as concrete and magical elements that 
+            define us. This holistic approach helps us give deeper meaning to our experiences and better 
+            understand our path in life, revealing connections between the universe and our inner world.
+            </p>
           </div>
-        </div>
-
-        <div className={styles.center}>
-          <Image
-            className={styles.logo}
-            src="/next.svg"
-            alt="Next.js Logo"
-            width={180}
-            height={37}
-            priority
-          />
-        </div>
-
-        <div className={styles.grid}>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2>
-              Docs <span>-&gt;</span>
-            </h2>
-            <p>
-              Find in-depth information about Next.js features and&nbsp;API.
-            </p>
-          </a>
-
-          <a
-            href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2>
-              Learn <span>-&gt;</span>
-            </h2>
-            <p>
-              Learn about Next.js in an interactive course with&nbsp;quizzes!
-            </p>
-          </a>
-
-          <a
-            href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2>
-              Templates <span>-&gt;</span>
-            </h2>
-            <p>
-              Discover and deploy boilerplate example Next.js&nbsp;projects.
-            </p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2>
-              Deploy <span>-&gt;</span>
-            </h2>
-            <p>
-              Instantly deploy your Next.js site to a shareable URL
-              with&nbsp;Vercel.
-            </p>
-          </a>
-        </div>
+          <div className={styles.sessionsDivContainer}>
+            <div className={styles.sessionsDiv}>
+              <h3>Natal chart lecture</h3>
+              <p className={styles.sessionsP}>Reading a birth chart consists of interpreting the astrological map that is generated from 
+                the exact date, time and place of a person&#39;s birth. This map shows the position of the 
+                planets, the Sun and the Moon in the zodiac signs and astrological houses at the time of 
+                birth. Through reading a birth chart, valuable insights can be gained about an individual&#39;s 
+                personality, talents, challenges, and growth potential. This deep interpretation offers a 
+                unique and personalized view of the patterns and cycles of life, helping us better 
+                understand our motivations, relationships, and purpose in the world.</p>
+              <Stack spacing={2} direction="row">
+                <Button variant="outlined">Read more</Button>
+              </Stack>
+            </div>
+            <div className={styles.sessionsDiv}>
+              <h3>Synastry chart</h3>
+              <p className={styles.sessionsP}>Synastry consists of the comparative analysis of two birth charts to evaluate the 
+                compatibility and dynamics between two people, whether in a romantic, friendship, family or 
+                work relationship. By overlaying and comparing the planetary positions and aspects of both 
+                birth charts, an astrologer can identify areas of harmony, tension, challenges, and 
+                opportunities for mutual growth. This technique allows us to understand how the energies of 
+                each individual interact, revealing communication patterns, shared values, potential 
+                conflicts and forms of support. Synastry provides a valuable tool to improve understanding 
+                and connection in any type of relationship, offering insights to strengthen the bond and 
+                better navigate differences.</p>
+              <Stack spacing={2} direction="row">
+                <Button variant="outlined">Read more</Button>
+              </Stack>
+            </div>
+            <div className={styles.sessionsDiv}>
+              <h3>Transits</h3>
+              <p className={styles.sessionsP}>The transit analysis in astrology focuses on examining the 
+              dynamic movements of planets and their interactions with an individual&#39;s birth chart over 
+              time. By analyzing transits, astrologers observe how the current positions of planets 
+              influence specific areas of life, revealing periods of opportunities, challenges, and 
+              personal transformations. This analysis highlights how planetary energies impact various 
+              aspects such as career, relationships, health, and personal growth. Through transit 
+              analysis, individuals can gain insight into the timing of significant events and make 
+              informed decisions that align with the prevailing cosmic influences, fostering a deeper 
+              connection with the cycles of the universe and promoting a more conscious and harmonious 
+              life.</p>
+              <Stack spacing={2} direction="row">
+                <Button variant="outlined">Read more</Button>
+              </Stack>
+            </div>
+          </div>
       </main>
     </>
   );
 }
+
+export default Home;;

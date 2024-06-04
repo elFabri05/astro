@@ -1,0 +1,70 @@
+.navBar{
+    display: flex;
+    justify-content: space-between;
+    padding: .5rem;
+}
+
+.iconTitleDiv{
+    display: flex;
+    gap: 10px;
+}
+
+.navBarTitle{
+    color: rgb(19, 101, 121);
+    transform: translateY(25%);
+}
+
+.navBar ul{
+    padding: .2rem;
+    margin-right: 1rem;
+    display: flex;
+    align-items: self-end;
+    justify-content: space-between;
+    list-style: none;
+    width: 380px;
+}
+
+.navBar ul li{
+    font-size: 1rem;
+}
+
+.burger-button {
+    background: none;
+    border: none;
+}
+  
+.bar {
+    width: 30px;
+    height: 3px;
+    background-color: rgb(121, 89, 19);
+    margin: 6px 0;
+}
+
+.link {
+    text-decoration: none;
+    color: rgb(121, 89, 19);
+    font-size: 1.5rem;
+  }
+
+  @media (min-width:720px){
+    .iconTitleDiv{
+        gap: 30px;
+        margin-left: 2rem;
+    }
+
+  }
+  
+
+  @media (min-width:850px){
+    
+    .navBarTitle{
+        font-size: 1.5rem;
+        transform: translateY(1);
+    }
+    
+    .navBar ul{
+        width: 450px;
+        margin-right: 4rem;
+    }
+
+  }
