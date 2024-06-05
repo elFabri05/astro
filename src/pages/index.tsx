@@ -4,8 +4,35 @@ import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.css";
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
+import { createTheme , ThemeProvider } from '@mui/material/styles';
+import { PaletteColorOptions } from '@mui/material/styles/createPalette';
 
 const inter = Inter({ subsets: ["latin"] });
+
+declare module '@mui/material/styles' {
+  interface Palette {
+    customColor: PaletteColorOptions;
+  }
+  interface PaletteOptions {
+    customColor: PaletteColorOptions;
+  }
+}
+
+const theme = createTheme({
+  palette: {
+    customColor: {
+      main: 'rgb(19, 101, 121)',
+      contrastText: 'rgb(19, 101, 121)', 
+    },
+  },
+});
+
+declare module '@mui/material/Button' {
+  interface ButtonPropsColorOverrides {
+    customColor: true;
+  }
+}
+
 
 const Home: React.FC = () => {
 
@@ -20,37 +47,42 @@ const Home: React.FC = () => {
       <main className={styles.homeContainer}>
           <div className={styles.imgHomePContainer}>
             <Image 
-              src="/assets/home-background-img.jpg"
+              src="/assets/home-background-mobile-img.jpg"
               alt="The cosmos"
               width={320}
               height={320}
               className={styles.homeImg}
             />
-            <p className={styles.homeP}>Astrology is presented as a valuable tool for self-knowledge, it&#39;s symbolic system 
-            offers a cosmic perspective that allows us to break down each part of our being in order to 
-            find our center. By delving into the interpretation of our evolutionary processes, we can 
-            explore hidden aspects of our personality, as well as concrete and magical elements that 
-            define us. This holistic approach helps us give deeper meaning to our experiences and better 
-            understand our path in life, revealing connections between the universe and our inner world.
-            </p>
+            <div className={styles.homeTextContainer}>
+              <h1 className={styles.homeH1}>Cosmic Synchronicity</h1>
+              <p className={styles.homeP}>Astrology is presented as a valuable tool for self-knowledge, it&#39;s symbolic system 
+              offers a cosmic perspective that allows us to break down each part of our being in order to 
+              find our center. By delving into the interpretation of our evolutionary processes, we can 
+              explore hidden aspects of our personality, as well as concrete and magical elements that 
+              define us. This holistic approach helps us give deeper meaning to our experiences and better 
+              understand our path in life, revealing connections between the universe and our inner world.
+              </p>
+            </div>
           </div>
-          <div className={styles.sessionsDivContainer}>
-            <div className={styles.sessionsDiv}>
+          <div className={styles.sessionsHomeDivContainer}>
+            <div className={styles.sessionsHomeDiv}>
               <h3>Natal chart lecture</h3>
-              <p className={styles.sessionsP}>Reading a birth chart consists of interpreting the astrological map that is generated from 
+              <p className={styles.sessionsHomeP}>Reading a birth chart consists of interpreting the astrological map that is generated from 
                 the exact date, time and place of a person&#39;s birth. This map shows the position of the 
                 planets, the Sun and the Moon in the zodiac signs and astrological houses at the time of 
                 birth. Through reading a birth chart, valuable insights can be gained about an individual&#39;s 
                 personality, talents, challenges, and growth potential. This deep interpretation offers a 
                 unique and personalized view of the patterns and cycles of life, helping us better 
                 understand our motivations, relationships, and purpose in the world.</p>
-              <Stack spacing={2} direction="row">
-                <Button variant="outlined">Read more</Button>
-              </Stack>
+              <ThemeProvider theme={theme}>
+                <Stack spacing={2} direction="row">
+                  <Button variant="outlined" color="customColor">Read more</Button>
+                </Stack>
+              </ThemeProvider>
             </div>
-            <div className={styles.sessionsDiv}>
-              <h3>Synastry chart</h3>
-              <p className={styles.sessionsP}>Synastry consists of the comparative analysis of two birth charts to evaluate the 
+            <div className={styles.sessionsHomeDiv}>
+              <h3>Synastry charts</h3>
+              <p className={styles.sessionsHomeP}>Synastry consists of the comparative analysis of two birth charts to evaluate the 
                 compatibility and dynamics between two people, whether in a romantic, friendship, family or 
                 work relationship. By overlaying and comparing the planetary positions and aspects of both 
                 birth charts, an astrologer can identify areas of harmony, tension, challenges, and 
@@ -59,13 +91,15 @@ const Home: React.FC = () => {
                 conflicts and forms of support. Synastry provides a valuable tool to improve understanding 
                 and connection in any type of relationship, offering insights to strengthen the bond and 
                 better navigate differences.</p>
-              <Stack spacing={2} direction="row">
-                <Button variant="outlined">Read more</Button>
-              </Stack>
+              <ThemeProvider theme={theme}>
+                <Stack spacing={2} direction="row">
+                  <Button variant="outlined" color="customColor">Read more</Button>
+                </Stack>
+              </ThemeProvider>
             </div>
-            <div className={styles.sessionsDiv}>
+            <div className={styles.sessionsHomeDiv}>
               <h3>Transits</h3>
-              <p className={styles.sessionsP}>The transit analysis in astrology focuses on examining the 
+              <p className={styles.sessionsHomeP}>The transit analysis in astrology focuses on examining the 
               dynamic movements of planets and their interactions with an individual&#39;s birth chart over 
               time. By analyzing transits, astrologers observe how the current positions of planets 
               influence specific areas of life, revealing periods of opportunities, challenges, and 
@@ -75,9 +109,11 @@ const Home: React.FC = () => {
               informed decisions that align with the prevailing cosmic influences, fostering a deeper 
               connection with the cycles of the universe and promoting a more conscious and harmonious 
               life.</p>
-              <Stack spacing={2} direction="row">
-                <Button variant="outlined">Read more</Button>
-              </Stack>
+              <ThemeProvider theme={theme}>
+                <Stack spacing={2} direction="row">
+                  <Button variant="outlined" color="customColor">Read more</Button>
+                </Stack>
+              </ThemeProvider>
             </div>
           </div>
       </main>

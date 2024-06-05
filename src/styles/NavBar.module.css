@@ -4,14 +4,8 @@
     padding: .5rem;
 }
 
-.iconTitleDiv{
-    display: flex;
-    gap: 10px;
-}
-
-.navBarTitle{
-    color: rgb(19, 101, 121);
-    transform: translateY(25%);
+.navBarIcon{
+    margin-left: 1rem;
 }
 
 .navBar ul{
@@ -47,19 +41,18 @@
   }
 
   @media (min-width:720px){
-    .iconTitleDiv{
-        gap: 30px;
+    .navBarIcon{
         margin-left: 2rem;
+        transform: translateY(5%);
     }
 
   }
   
 
-  @media (min-width:850px){
-    
-    .navBarTitle{
-        font-size: 1.5rem;
-        transform: translateY(1);
+  @media (min-width:950px){
+
+    .navBar{
+        padding-top: 2rem;
     }
     
     .navBar ul{

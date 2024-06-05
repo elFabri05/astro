@@ -26,15 +26,13 @@ const NavBar : React.FC = () => {
         <>
           <header>
               <nav className={styles.navBar }>
-                  <div className={styles.iconTitleDiv}>
                     <Image
                         src="/assets/navBar-icon.png"
                         alt="Nav bar logo"
                         width={50}
                         height={50}
+                        className={styles.navBarIcon}
                     />
-                    <h3 className={styles.navBarTitle}>Cosmic Synchronicity</h3>
-                  </div>
                   {isTablet ? 
                   <>
                     <IconButton 

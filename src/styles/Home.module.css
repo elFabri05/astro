@@ -5,18 +5,28 @@
   }
   
   .homeImg{
-    opacity: .9;
     border-radius: 3px;
+  }
+
+  .homeH1{
+    color: rgb(19, 101, 121);
+    font-size: 1.5rem;
+    margin: 2rem;
+  }
+
+  .homeTextContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   .homeP{
     font-size: 1.1rem;
     padding: .5rem;
     text-align: center;
-    /* color: rgb(19, 101, 121); */
   }
 
-  .sessionsDiv{
+  .sessionsHomeDiv{
     border: 1px solid rgb(19, 101, 121);
     border-radius: 5px;
     height: 200px;
@@ -28,14 +38,18 @@
     align-items: center;
   } 
 
-  .sessionsDiv h3{
+  .sessionsHomeDiv h3{
     color: rgb(19, 101, 121);
   }
 
-  .sessionsP{
+  .sessionsHomeP{
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
     overflow: hidden;
-    /* white-space: nowrap; */
     text-overflow: ellipsis;
+    -webkit-line-clamp: 4;
+    height: 6em;
+    line-height: 1.5em;
   }
 
   @media (min-width: 320px){
@@ -45,7 +59,7 @@
     }
 
     .homeP{
-      padding: 2rem;
+      padding: 0 2rem;
     }
   }
 
@@ -57,33 +71,46 @@
 
     .homeP{
       font-size: 1.2rem;
+      margin-bottom: 3rem;
     }
 
-    .sessionsDiv{
+    .sessionsHomeDiv{
       width: 370px;
     }
   }
 
-  @media (min-width:850px){
+
+
+  @media (min-width:940px){
     .imgHomePContainer{
       display: grid;
-      
       grid-template-columns: 1fr 1fr;
       margin: 2rem 2rem;
     }
 
-    .homeImg{
-      width: 100%;
-      grid-area: 1 / 2 / 2 / 3;
+    .homeH1{
+      margin: 0 0 1rem;
+      font-size: 2.5rem;
+      font-style: oblique;
     }
 
-    .sessionsDivContainer{
+    .homeImg{
+      grid-area: 1 / 2 / 2 / 3;
+      justify-self: center;
+    }
+
+    .homeP{
+      margin-bottom: 0;
+      text-align: start;
+    }
+
+    .sessionsHomeDivContainer{
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
       margin-top: 5rem;
     }
 
-    .sessionsDiv{
+    .sessionsHomeDiv{
       width: 250px;
     }
   }
