@@ -1,11 +1,24 @@
-import "@/styles/globals.css";
-import type { AppProps } from "next/app";
-import Layout from "@/Components/Layout";
+import { AppProps } from 'next/app';
+import { appWithTranslation } from 'next-i18next';
+import Layout from '@/components/Layout';
+import '@/styles/globals.css';
+import { useEffect, useState } from 'react';
+import i18n from '../../i18n.mjs';
 
-export default function App({ Component, pageProps }: AppProps) {
+function MyApp({ Component, pageProps }: AppProps) {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    i18n.init().then(() => setLoading(false));
+  }, []);
+
+  if (loading) return <div style={{fontSize: "2rem", margin: '3rem'}}>Loading...</div>;
+
   return (
     <Layout>
       <Component {...pageProps} />
     </Layout>
   );
 }
+
+export default appWithTranslation(MyApp);

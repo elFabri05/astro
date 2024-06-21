@@ -29,7 +29,7 @@
   .sessionsHomeDiv{
     border: 1px solid rgb(19, 101, 121);
     border-radius: 5px;
-    height: 200px;
+    height: 210px;
     width: 250px;
     margin: 2rem auto;
     padding: 1rem;
@@ -50,6 +50,7 @@
     -webkit-line-clamp: 4;
     height: 6em;
     line-height: 1.5em;
+    margin-bottom: 12px;
   }
 
   @media (min-width: 320px){
@@ -79,7 +80,17 @@
     }
   }
 
+@media (min-width:720px){
+  .imgHomePContainer{
+    flex-direction: column-reverse;
+  }
 
+  .homeH1{
+    margin: 2rem 0;
+    font-size: 2rem;
+    font-style: oblique;
+  }
+}
 
   @media (min-width:940px){
     .imgHomePContainer{
@@ -87,21 +98,21 @@
       grid-template-columns: 1fr 1fr;
       margin: 2rem 2rem;
     }
-
+    
     .homeH1{
-      margin: 0 0 1rem;
+      margin: 0 0 2rem;
       font-size: 2.5rem;
       font-style: oblique;
     }
-
+    
     .homeImg{
       grid-area: 1 / 2 / 2 / 3;
       justify-self: center;
     }
-
+    
     .homeP{
       margin-bottom: 0;
-      text-align: start;
+      text-align: end;
     }
 
     .sessionsHomeDivContainer{

@@ -1,0 +1,76 @@
+.aboutMe{
+    display: flex;
+    flex-direction: column;
+}
+
+.profilePic{
+    align-self: center;
+    border-radius: 4px;
+}
+
+.aboutMeContent{
+    padding: 1rem .5rem;
+}
+
+.aboutMeContent h2{
+    color: rgb(19, 101, 121);
+}
+
+.aboutMeContent p{
+    margin: 0 auto 1rem;
+}
+
+@media (min-width:350px){
+    .aboutMeContent{
+        padding: 1rem;
+    }
+
+    .profilePic{
+        margin-top:2rem;
+     }
+
+    .aboutMeContent h2{
+        text-align: center;
+        margin: 1rem auto;
+    }
+}
+
+@media (min-width:550px){
+    .aboutMeContent{
+        padding: 1rem 2rem;
+    }
+}
+
+@media (min-width:750px){
+    .aboutMe{
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        gap: 2rem;
+        margin: 5rem 2rem;
+        margin-bottom: 0dvh;
+    }
+
+    .aboutMeContent {
+        align-self: center;
+        padding: 0;
+        margin: 0;
+    }
+
+    .aboutMeContent h2{
+        text-align:start;
+        /* margin: 0; */
+    }
+
+    .aboutMeContent p,
+    .profilePic{
+        margin: 0;
+    }
+
+    .profilePic{
+        justify-self: end;
+    }
+
+    .aboutMeContent p{
+        max-width: 600px;
+    }
+}

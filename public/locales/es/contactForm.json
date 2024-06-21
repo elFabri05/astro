@@ -1,0 +1,19 @@
+{
+  "sessionType": "Tipo de Sesión",
+  "individualSession": "Sesión Individual",
+  "synastrySession": "Sesión de Sinastría",
+  "name": "Nombre",
+  "birthdate": "Fecha de Nacimiento",
+  "birthtime": "Hora de Nacimiento",
+  "birthplace": "Lugar de Nacimiento",
+  "partnerName": "Nombre del Pareja",
+  "partnerBirthdate": "Fecha de Nacimiento del Pareja",
+  "partnerBirthtime": "Hora de Nacimiento del Pareja",
+  "partnerBirthplace": "Lugar de Nacimiento del Pareja",
+  "email": "Correo Electrónico",
+  "message": "Mensaje",
+  "sendEmail": "Enviar",
+  "successMessage": "¡Tu correo ha sido enviado exitosamente!",
+  "required": "es requerido",
+  "invalidEmail": "Correo electrónico inválido"
+}

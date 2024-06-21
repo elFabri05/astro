@@ -1,0 +1,19 @@
+{
+  "sessionType": "Session Type",
+  "individualSession": "Individual Session",
+  "synastrySession": "Synastry Session",
+  "name": "Name",
+  "birthdate": "Birthdate",
+  "birthtime": "Birthtime",
+  "birthplace": "Birthplace",
+  "partnerName": "Partner's Name",
+  "partnerBirthdate": "Partner's Birthdate",
+  "partnerBirthtime": "Partner's Birthtime",
+  "partnerBirthplace": "Partner's Birthplace",
+  "email": "Email",
+  "message": "Message",
+  "sendEmail": "Send Email",
+  "successMessage": "Your email has been sent successfully!",
+  "required": "is required",
+  "invalidEmail": "Invalid email address"
+}

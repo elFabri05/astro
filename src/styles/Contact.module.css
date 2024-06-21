@@ -1,0 +1,50 @@
+.contactP,
+.emailFrom{
+    width: 320px;
+    padding: 1rem;
+    margin: 2rem auto ;
+}
+
+.emailFrom{
+    margin-top: 0;
+    padding-top: 0;
+}
+
+@media (min-width: 420px){
+    .contactP,
+    .emailFrom{
+        width: 400px;
+    }
+}
+
+@media (min-width: 700px){
+    .contactContainer{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        margin: 2rem auto;
+    }
+
+    .contactP,
+    .emailFrom{
+        margin: 0;
+        padding: 0 1rem 2rem;
+    }
+
+    .contactP{
+        width: 320px;
+        /* padding-top: 3rem; */
+        justify-self: center;
+    }
+
+    .emailFrom{
+        width: 100%;
+    }
+}
+
+@media (min-width: 950px){
+    .contactContainer{
+        margin: 2rem;
+        margin-bottom: 1rem;
+        grid-template-columns: 1fr 2fr;
+    }
+}

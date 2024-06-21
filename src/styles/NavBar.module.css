@@ -10,12 +10,12 @@
 
 .navBar ul{
     padding: .2rem;
-    margin-right: 1rem;
+    margin-right: .5rem;
     display: flex;
     align-items: self-end;
     justify-content: space-between;
     list-style: none;
-    width: 380px;
+    gap: 1rem;
 }
 
 .navBar ul li{
@@ -45,19 +45,15 @@
         margin-left: 2rem;
         transform: translateY(5%);
     }
-
   }
-  
 
   @media (min-width:950px){
-
     .navBar{
         padding-top: 2rem;
     }
     
     .navBar ul{
         width: 450px;
-        margin-right: 4rem;
     }
 
   }

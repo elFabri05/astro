@@ -1,0 +1,19 @@
+{
+  "sessionType": "Type de Séance",
+  "individualSession": "Séance Individuelle",
+  "synastrySession": "Séance de Synastrie",
+  "name": "Nom",
+  "birthdate": "Date de Naissance",
+  "birthtime": "Heure de Naissance",
+  "birthplace": "Lieu de Naissance",
+  "partnerName": "Nom du Partenaire",
+  "partnerBirthdate": "Date de Naissance du Partenaire",
+  "partnerBirthtime": "Heure de Naissance du Partenaire",
+  "partnerBirthplace": "Lieu de Naissance du Partenaire",
+  "email": "Email",
+  "message": "Message",
+  "sendEmail": "Envoyer",
+  "successMessage": "Votre courriel a été envoyé avec succès!",
+  "required": "est requis",
+  "invalidEmail": "Adresse courriel invalide"
+}
