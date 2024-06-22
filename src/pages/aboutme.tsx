@@ -25,7 +25,12 @@ const AboutMe: React.FC = () => {
           />
           <div className={styles.aboutMeContent}>
             <h2>{t('name')}</h2>
-            <p>{t('profile')}</p>
+            <p>{t('profile').split('\n').map((line, index) => (
+              <span key={index}>
+                {line}
+                <br />
+              </span>
+            ))}</p>
           </div>
         </div>
       </main>

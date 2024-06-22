@@ -14,6 +14,8 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   if (loading) return <div style={{fontSize: "2rem", margin: '3rem'}}>Loading...</div>;
 
+  
+
   return (
     <Layout>
       <Component {...pageProps} />
