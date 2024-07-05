@@ -1,20 +1,9 @@
-.contactP,
-.emailFrom{
-    width: 320px;
+.contactContainer{
     padding: 1rem;
-    margin: 2rem auto ;
 }
 
-.emailFrom{
-    margin-top: 0;
-    padding-top: 0;
-}
-
-@media (min-width: 420px){
-    .contactP,
-    .emailFrom{
-        width: 400px;
-    }
+.contactP h1{
+    color: rgb(19, 101, 121);
 }
 
 @media (min-width: 700px){

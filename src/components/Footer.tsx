@@ -1,4 +1,4 @@
-import styles from "@/styles/Footer.module.css";
+import styles from "@/styles/footer.module.css";
 import { usePathname } from 'next/navigation';
 
 const Footer: React.FC = () => {

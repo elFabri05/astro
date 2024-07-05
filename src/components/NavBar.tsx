@@ -1,12 +1,12 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import styles from '@/styles/NavBar.module.css';
+import styles from '@/styles/navBar.module.css';
 import useMediaQuery from '@/hooks/useMediaQuery';
 import { IconButton, Menu, MenuItem } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import LanguageMenu from './LanguageMenu';
-import { useTranslation } from 'react-i18next';
+import useTranslation from 'next-translate/useTranslation';
 
 const NavBar: React.FC = () => {
   const { t } = useTranslation('common');
@@ -33,7 +33,6 @@ const NavBar: React.FC = () => {
             width={50}
             height={50}
             className={styles.navBarIcon}
-            priority
           />
           {isTablet ? (
             <>
@@ -53,27 +52,27 @@ const NavBar: React.FC = () => {
                 open={menuIsOpen}
                 onClose={handleClose}
               >
-                  <MenuItem onClick={handleClose}>
-                    <Link href='/' className={styles.link}>
-                      {t('home')}
-                    </Link>
-                  </MenuItem>
-                  <MenuItem onClick={handleClose}>
-                    <Link href='/sessions' className={styles.link}>
-                      {t('sessions')}
-                    </Link>
-                  </MenuItem>
-                  <MenuItem onClick={handleClose}>
-                    <Link href='/aboutme' className={styles.link}>
-                      {t('about')}
-                    </Link>
-                  </MenuItem>
-                  <MenuItem onClick={handleClose}>
-                    <Link href='/contact' className={styles.link}>
-                      {t('contact')}
-                    </Link>
-                  </MenuItem>
-                  <LanguageMenu />  
+                <MenuItem onClick={handleClose}>
+                  <Link href='/' className={styles.link}>
+                    {t('home')}
+                  </Link>
+                </MenuItem>
+                <MenuItem onClick={handleClose}>
+                  <Link href='/sessions' className={styles.link}>
+                    {t('sessions')}
+                  </Link>
+                </MenuItem>
+                <MenuItem onClick={handleClose}>
+                  <Link href='/aboutme' className={styles.link}>
+                    {t('about')}
+                  </Link>
+                </MenuItem>
+                <MenuItem onClick={handleClose}>
+                  <Link href='/contact' className={styles.link}>
+                    {t('contact')}
+                  </Link>
+                </MenuItem>
+                <LanguageMenu />  
               </Menu>
             </>
           ) : (

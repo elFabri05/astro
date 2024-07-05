@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import EmailForm from '@/components/EmailForm';
-import styles from "@/styles/Contact.module.css";
-import { useTranslation } from 'react-i18next';
+import styles from "@/styles/contact.module.css";
+import useTranslation from 'next-translate/useTranslation';
 
 const Contact: React.FC = () => {
   const { t } = useTranslation('contact');
@@ -26,7 +26,7 @@ const Contact: React.FC = () => {
             ))}
           </p>
         </div>
-        <div className={styles.emailFrom}>
+        <div className={styles.emailForm}>
           <EmailForm />
         </div>
       </main>

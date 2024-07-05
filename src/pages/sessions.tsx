@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Head from "next/head";
-import styles from "@/styles/Sessions.module.css";
-import { useTranslation } from "react-i18next";
+import styles from "@/styles/sessions.module.css";
+import useTranslation from "next-translate/useTranslation";
 
 const Sessions: React.FC = () => {
   const { t } = useTranslation('sessions');

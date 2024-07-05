@@ -1,21 +1,27 @@
-import React, { useState, MouseEvent } from 'react';
+import React, { useState, MouseEvent, useEffect } from 'react';
 import { IconButton, Menu, MenuItem } from '@mui/material';
 import LanguageIcon from '@mui/icons-material/Language';
-import { useTranslation } from 'react-i18next';
+import useTranslation from 'next-translate/useTranslation';
+import setLanguage from 'next-translate/setLanguage';
 import useMediaQuery from '../hooks/useMediaQuery';
 import { useRouter } from 'next/router';
 import { styled } from '@mui/system';
+import i18nConfig from '../../i18n.json';
 
 const StyledMenuItem = styled(MenuItem)({
-  fontSize: '1.2rem', // Adjust the font size here
+  fontSize: '1.2rem', 
   color: 'rgb(19, 101, 121)',
 });
 
 const LanguageMenu: React.FC = () => {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
-  const { i18n } = useTranslation();
-  const currentLanguage = (i18n.language || 'en').toUpperCase();
+  const { t, lang } = useTranslation('common');
+  const [currentLanguage, setCurrentLanguage] = useState(lang || 'en');
   const router = useRouter();
+
+  useEffect(() => {
+    setCurrentLanguage(lang || 'en');
+  }, [lang]);
 
   const handleClick = (event: MouseEvent<HTMLElement>) => {
     setAnchorEl(event.currentTarget);
@@ -25,30 +31,43 @@ const LanguageMenu: React.FC = () => {
     setAnchorEl(null);
   };
 
-  const handleLanguageChange = (language: string) => {
-    i18n.changeLanguage(language.toLowerCase()).then(() => {
-      router.push(router.pathname, router.asPath, { locale: language.toLowerCase() });
-    });
+  const handleLanguageChange = async (language: string) => {
+    await setLanguage(language);
+    setCurrentLanguage(language);
     setAnchorEl(null);
+
+    // Update the URL without navigation
+    const { pathname, asPath, query } = router;
+    router.push({ pathname, query }, asPath, { locale: language, shallow: true });
   };
 
   const menuIsOpen = Boolean(anchorEl);
-  const languages = ['EN', 'FR', 'ES'];
+  const languages = i18nConfig.locales;
   const remainingLanguages = languages.filter(lang => lang !== currentLanguage);
 
   const isTablet = !useMediaQuery(720);
 
+  const getLanguageFullName = (code: string) => {
+    const names: { [key: string]: string } = {
+      en: 'English',
+      fr: 'Français',
+      es: 'Español',
+      // Add more languages as needed
+    };
+    return names[code] || code.toUpperCase();
+  };
+
   return (
     <>
       <IconButton
-        aria-label="language selection"
+        aria-label={t('language-selection')}
         aria-controls="language-menu"
         aria-haspopup="true"
         onClick={handleClick}
         sx={{ color: 'rgb(19, 101, 121)', marginLeft: '8px', ...(isTablet && { marginTop: '12px' }) }}
       >
         <LanguageIcon sx={{ marginRight: '4px' }} />
-        <span style={{ fontSize: '1.2rem' }}>{currentLanguage}</span>
+        <span style={{ fontSize: '1.2rem' }}>{currentLanguage.toUpperCase()}</span>
       </IconButton>
       <Menu
         id="language-menu"
@@ -59,7 +78,7 @@ const LanguageMenu: React.FC = () => {
       >
         {remainingLanguages.map(language => (
           <StyledMenuItem key={language} onClick={() => handleLanguageChange(language)}>
-            {language}
+            {getLanguageFullName(language)}
           </StyledMenuItem>
         ))}
       </Menu>

@@ -1,12 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Wittgenstein:ital,wght@0,400..900;1,400..900&display=swap');
+
 :root {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    background-color: rgb(191, 191, 221);
+    background-color: rgb(205, 205, 221);
     color: rgb(121, 89, 19);
     line-height: 1.5;
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
+    font-family: "Montserrat", sans-serif;
 }
 
 *,

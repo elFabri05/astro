@@ -1,7 +1,7 @@
-import styles from "@/styles/Aboutme.module.css";
+import styles from "@/styles/aboutme.module.css";
 import Image from "next/image";
 import Head from "next/head";
-import { useTranslation } from "react-i18next";
+import useTranslation from "next-translate/useTranslation";
 
 const AboutMe: React.FC = () => {
   const { t } = useTranslation('aboutme');

@@ -8,10 +8,6 @@
     border-radius: 2px;
 }
 
-.sessionsImg:last-of-type{
-    /* opacity: .6; */
-}
-
 .sessionsDescription{
     padding: .5rem;
 }

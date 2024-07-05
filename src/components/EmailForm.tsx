@@ -10,7 +10,7 @@ import FormControl from '@mui/material/FormControl';
 import InputLabel from '@mui/material/InputLabel';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { PaletteColorOptions } from '@mui/material/styles/createPalette';
-import { useTranslation } from 'react-i18next';
+import useTranslation from 'next-translate/useTranslation';
 
 declare module '@mui/material/styles' {
   interface Palette {
@@ -224,7 +224,7 @@ const EmailForm: React.FC = () => {
             {...register('message', { required: `${t('message')} ${t('required')}` })}
             error={!!errors.message}
             helperText={errors.message ? errors.message.message : ''}
-            sx={{maxWidth: "800px"}}
+            sx={{ maxWidth: "800px" }}
           />
         </Box>
 
@@ -235,7 +235,7 @@ const EmailForm: React.FC = () => {
         </ThemeProvider>
 
         {responseMessage && (
-          <Box sx={{ mt: 2 , width: 300 }}>
+          <Box sx={{ mt: 2, width: 300 }}>
             <Alert severity="success">{t('successMessage')}</Alert>
           </Box>
         )}
