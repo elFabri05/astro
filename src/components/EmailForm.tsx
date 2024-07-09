@@ -235,7 +235,7 @@ const EmailForm: React.FC = () => {
         </ThemeProvider>
 
         {responseMessage && (
-          <Box sx={{ mt: 2, width: 300 }}>
+          <Box sx={{ mt: 2, maxWidth: 320 }}>
             <Alert severity="success">{t('successMessage')}</Alert>
           </Box>
         )}
