@@ -17,14 +17,6 @@ const Contact: React.FC = () => {
       <main className={styles.contactContainer}>
         <div className={styles.contactP}>
           <h1>{t('heading')}</h1>
-          <p>
-            {t('paragraph').split('\n').map((line, index) => (
-              <span key={index}>
-                {line}
-                <br />
-              </span>
-            ))}
-          </p>
         </div>
         <div className={styles.emailForm}>
           <EmailForm />
